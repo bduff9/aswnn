@@ -1,10 +1,10 @@
 # sapper-template
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/027d044a-af5f-42fc-9100-5f4d4c41f12f/deploy-status)](https://app.netlify.com/sites/hopeful-bassi-fdacc1/deploys)
+
 The default template for setting up a [Sapper](https://github.com/sveltejs/sapper) project. Can use either Rollup or webpack as bundler.
 
-
 ## Getting started
-
 
 ### Using `degit`
 

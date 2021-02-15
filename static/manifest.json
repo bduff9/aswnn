@@ -1,18 +1,18 @@
 {
-	"background_color": "#ffffff",
-	"theme_color": "#333333",
-	"name": "TODO",
-	"short_name": "TODO",
+	"background_color": "#18BC9C",
+	"theme_color": "#2C3E50",
+	"name": "ASiteWithNoName",
+	"short_name": "ASWNN",
 	"display": "minimal-ui",
 	"start_url": "/",
 	"icons": [
 		{
-			"src": "logo-192.png",
+			"src": "img/horse.png",
 			"sizes": "192x192",
 			"type": "image/png"
 		},
 		{
-			"src": "logo-512.png",
+			"src": "img/horse.png",
 			"sizes": "512x512",
 			"type": "image/png"
 		}

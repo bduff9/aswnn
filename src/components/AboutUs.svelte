@@ -1,0 +1,64 @@
+<script lang="ts">
+	import PersonFill from 'svelte-bootstrap-icons/lib/PersonFill';
+	import { scrollToBottom } from 'svelte-scrollto';
+	import { Button, Col, Container, Row } from 'sveltestrap/src';
+</script>
+
+<style type="text/scss">
+	@import "../../scss/variables.scss";
+	section.success {
+		background: $success;
+		color: white;
+	}
+
+	:global(.btn-outline-light) {
+		color: white;
+		font-size: 20px;
+		border: solid 2px white;
+		background: transparent;
+		transition: all 0.3s ease-in-out;
+		margin-top: 15px;
+
+		&:hover,
+		&:focus,
+		&:active,
+		&.active {
+			color: $success;
+			background: white;
+			border: solid 2px white;
+		}
+
+		:global(svg) {
+			height: 22px;
+			width: 22px;
+			vertical-align: text-bottom;
+		}
+	}
+</style>
+
+<section class="success" id="about">
+	<Container>
+		<Row>
+			<Col lg="12" class="text-center">
+				<h2>About</h2>
+				<hr class="star-light">
+			</Col>
+		</Row>
+		<Row>
+			<Col lg={{ size: 4, offset: 2 }}>
+				<p>This site is owned and operated by Billy Alexander and Brian Duffey.  They specialize in full-stack web development.</p>
+			</Col>
+			<Col lg="4">
+				<p>All current public projects can be found here.  Languages used in these projects include JavaScript (nodejs, meteor, reactjs, jquery), html, and css (sass).</p>
+			</Col>
+			<Col lg={{ size: 8, offset: 2 }} class="text-center">
+				<Button color="light" on:click={scrollToBottom} outline size="lg">
+					<PersonFill /> More about Billy
+				</Button>
+				<Button color="light" on:click={scrollToBottom} outline size="lg">
+					<PersonFill /> More about Brian
+				</Button>
+			</Col>
+		</Row>
+	</Container>
+</section>

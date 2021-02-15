@@ -1,33 +1,142 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "aswnn",
   "version": "0.0.1",
+  "description": "ASWNN homepage",
+  "keywords": [
+    "aswnn",
+    "svelte",
+    "typescript",
+    "sapper",
+    "netlify"
+  ],
+  "homepage": "https://www.asitewithnoname.com/",
+  "license": "UNLICENSED",
+  "author": "Brian Duffey <brian.e.duffey@gmail.com>",
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bduff9/aswnn.git"
+  },
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
+    "env": "sync-dotenv --sample .env.local",
     "export": "sapper export --legacy",
-    "start": "node __sapper__/build"
+    "lint": "eslint . --quiet",
+    "lint-fix": "eslint . --quiet --fix",
+    "setup": "npx typesync && meteor npm i && meteor npm prune",
+    "start": "node __sapper__/build",
+    "test": "jest",
+    "test:ci": "jest --ci --reporters='default' --reporters='./github-actions-reporter'",
+    "test:watch": "jest --watch",
+    "validate:manually": "npm run lint && tsc --noEmit && npx ts-prune",
+    "validate": "svelte-check --ignore src/node_modules/@sapper"
   },
+  "config": {},
   "dependencies": {
+    "bootstrap": "5.0.0-beta2",
     "compression": "1.7.4",
     "polka": "next",
-    "sirv": "1.0.11"
+    "sirv": "1.0.11",
+    "sveltestrap": "5.0.0-beta.1-4"
   },
   "devDependencies": {
-    "sapper": "0.29.1",
-    "svelte": "3.32.1",
-    "@babel/core": "7.12.13",
+    "@babel/core": "7.12.16",
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
     "@babel/plugin-transform-runtime": "7.12.15",
-    "@babel/preset-env": "7.12.13",
+    "@babel/preset-env": "7.12.16",
     "@babel/runtime": "7.12.13",
-    "@rollup/plugin-babel": "5.2.3",
+    "@rollup/plugin-babel": "5.3.0",
     "@rollup/plugin-commonjs": "17.1.0",
-    "@rollup/plugin-node-resolve": "11.1.1",
+    "@rollup/plugin-node-resolve": "11.2.0",
     "@rollup/plugin-replace": "2.3.4",
+    "@rollup/plugin-typescript": "8.2.0",
     "@rollup/plugin-url": "6.0.0",
-    "rollup": "2.38.5",
+    "@tsconfig/svelte": "^1.0.10",
+    "@types/babel__core": "7.1.12",
+    "@types/babel__plugin-transform-runtime": "7.9.1",
+    "@types/babel__preset-env": "7.9.1",
+    "@types/bootstrap": "5.0.5",
+    "@types/compression": "^1.7.0",
+    "@types/eslint": "7.2.6",
+    "@types/node": "14.14.28",
+    "@types/node-sass": "4.11.1",
+    "@types/polka": "0.5.2",
+    "@types/stylelint": "9.10.1",
+    "autoprefixer": "10.2.4",
+    "eslint": "7.20.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-prettierx": "0.17.1",
+    "eslint-plugin-svelte3": "3.0.0",
+    "eslint-plugin-you-dont-need-momentjs": "1.6.0",
+    "husky": "5.0.9",
+    "jest": "26.6.3",
+    "lint-staged": "10.5.4",
+    "node-sass": "5.0.0",
+    "npm-package-json-lint": "5.1.0",
+    "postcss": "8.2.6",
+    "rollup": "2.39.0",
     "rollup-plugin-svelte": "7.1.0",
-    "rollup-plugin-terser": "7.0.2"
+    "rollup-plugin-terser": "7.0.2",
+    "sapper": "0.29.1",
+    "scriptlint": "2.1.2",
+    "stylelint": "13.10.0",
+    "stylelint-config-standard": "20.0.0",
+    "svelte": "3.32.3",
+    "svelte-bootstrap-icons": "1.3.0",
+    "svelte-check": "1.1.34",
+    "svelte-forms": "1.1.2",
+    "svelte-preprocess": "4.6.9",
+    "svelte-scrollto": "0.2.0",
+    "sync-dotenv": "2.6.2",
+    "ts-jest": "26.5.1",
+    "tslib": "2.1.0",
+    "typescript": "4.1.5"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "private": true,
+  "husky": {
+    "hooks": {
+      "post-merge": "npm run setup",
+      "pre-commit": "lint-staged && npm run env",
+      "pre-push": "npm run test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --quiet --fix",
+      "git add"
+    ],
+    "*.{md,json,css,scss}": [
+      "prettierx --write",
+      "git add"
+    ],
+    "package.json": [
+      "scriptlint --fix",
+      "npmPkgJsonLint ."
+    ]
+  },
+  "jest": {
+    "moduleNameMapper": {},
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.(ts|tsx)"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "./.next/",
+      "./node_modules/"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "tsconfig.jest.json"
+      }
+    }
   }
 }
