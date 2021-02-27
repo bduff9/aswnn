@@ -5,6 +5,7 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/bduff9/aswnn?branch=main)](https://bettercodehub.com/)
 [![CodeFactor](https://www.codefactor.io/repository/github/bduff9/aswnn/badge)](https://www.codefactor.io/repository/github/bduff9/aswnn)
 [![Known Vulnerabilities](https://snyk.io/test/github/bduff9/aswnn/badge.svg)](https://snyk.io/test/github/bduff9/aswnn)
+[![deepcode](https://www.deepcode.ai/api/gh/badge?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF0Zm9ybTEiOiJnaCIsIm93bmVyMSI6ImJkdWZmOSIsInJlcG8xIjoiYXN3bm4iLCJpbmNsdWRlTGludCI6ZmFsc2UsImF1dGhvcklkIjoyNjUxMiwiaWF0IjoxNjE0Mzk1OTMzfQ.8MF4zK8mmAZN3TMPPd9v4cVrgYcuxEYjVsif2rBFjac)](https://www.deepcode.ai/app/gh/bduff9/aswnn/_/dashboard?utm_content=gh%2Fbduff9%2Faswnn)
 
 The default template for setting up a [Sapper](https://github.com/sveltejs/sapper) project. Can use either Rollup or webpack as bundler.
 
