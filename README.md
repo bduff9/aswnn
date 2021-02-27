@@ -1,6 +1,10 @@
 # sapper-template
 
+[![Github Actions](https://github.com/bduff9/aswnn/workflows/Tests%20CI/badge.svg)](https://github.com/bduff9/aswnn/actions/workflows/tests.yml)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/027d044a-af5f-42fc-9100-5f4d4c41f12f/deploy-status)](https://app.netlify.com/sites/hopeful-bassi-fdacc1/deploys)
+[![BCH compliance](https://bettercodehub.com/edge/badge/bduff9/aswnn?branch=main)](https://bettercodehub.com/)
+[![CodeFactor](https://www.codefactor.io/repository/github/bduff9/aswnn/badge)](https://www.codefactor.io/repository/github/bduff9/aswnn)
+[![Known Vulnerabilities](https://snyk.io/test/github/bduff9/aswnn/badge.svg)](https://snyk.io/test/github/bduff9/aswnn)
 
 The default template for setting up a [Sapper](https://github.com/sveltejs/sapper) project. Can use either Rollup or webpack as bundler.
 
