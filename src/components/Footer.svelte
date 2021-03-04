@@ -132,6 +132,10 @@
 				<Col lg="12">
 					Copyright &copy; ASiteWithNoName.com {year}
 				</Col>
+				<Col hidden>
+					<a href="/privacy_policy">Privacy Policy</a>
+					<a href="/terms">Terms &amp; Conditions</a>
+				</Col>
 			</Row>
 		</Container>
 	</div>

@@ -20,7 +20,7 @@
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
-    "env": "sync-dotenv --sample .env.local",
+    "env": "sync-dotenv",
     "export": "sapper export --legacy",
     "lint": "eslint . --quiet",
     "lint-fix": "eslint . --quiet --fix",
