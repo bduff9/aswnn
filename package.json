@@ -50,7 +50,7 @@
     "@rollup/plugin-typescript": "8.2.0",
     "@rollup/plugin-url": "6.0.0",
     "@tsconfig/svelte": "^1.0.10",
-    "@types/babel__core": "7.1.12",
+    "@types/babel__core": "7.1.13",
     "@types/babel__plugin-transform-runtime": "7.9.1",
     "@types/babel__preset-env": "7.9.1",
     "@types/bootstrap": "5.0.8",
