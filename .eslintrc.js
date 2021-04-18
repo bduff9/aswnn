@@ -1,34 +1,13 @@
 module.exports = {
-	root: true,
 	env: {
 		browser: true,
 		node: true,
 		es6: true,
 	},
-	parser: '@typescript-eslint/parser',
-	parserOptions: {
-		ecmaVersion: 2019,
-		sourceType: 'module',
-		project: './tsconfig.json',
-	},
-	plugins: [
-		'@typescript-eslint',
-		'import',
-		'prettierx',
-		'svelte3',
-	],
-	settings: {
-		prettierx: {
-			usePrettierrc: true,
-		},
-	},
-	overrides: [{
-		files: ['*.svelte'],
-		processor: 'svelte3/svelte3'
-	}],
 	extends: [
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
+		'plugin:@typescript-eslint/recommended-requiring-type-checking',
 		'plugin:import/errors',
 		'plugin:import/typescript',
 		'plugin:import/warnings',
@@ -36,6 +15,34 @@ module.exports = {
 		'plugin:prettierx/standardx',
 		'plugin:you-dont-need-momentjs/recommended',
 	],
+	overrides: [{
+		files: ['*.svelte'],
+		processor: 'svelte3/svelte3'
+	}],
+	parser: '@typescript-eslint/parser',
+	parserOptions: {
+		ecmaVersion: 2020,
+		sourceType: 'module',
+		project: './tsconfig.json',
+		extraFileExtensions: ['.svelte'],
+	},
+	plugins: [
+		'@typescript-eslint',
+		'import',
+		'prettierx',
+		'svelte3',
+	],
+	root: true,
+	settings: {
+		prettierx: {
+			usePrettierrc: true,
+		},
+		'svelte3/typescript': require('typescript'),
+		// ignore style tags in Svelte because of Tailwind CSS
+		// See https://github.com/sveltejs/eslint-plugin-svelte3/issues/70
+		'svelte3/ignore-styles': () => true,
+	},
+	ignorePatterns: ['node_modules'],
 	rules: {
 		'prettierx/options': [
 			2,
