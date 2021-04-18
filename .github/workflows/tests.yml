@@ -20,6 +20,15 @@ jobs:
         run: npm ci
       - name: Validate code is well-formatted
         run: npm run validate
+      - name: Analyze the code
+        id: scc
+        uses: iryanbell/scc-docker-action@v1.0.0
+        with:
+          args: ${{ env.workspace }}
+      - uses: returntocorp/semgrep-action@v1
+        with:
+          publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
+          publishDeployment: 600
       - name: Set environment variables
         run: |
           case "${GITHUB_REF}" in
