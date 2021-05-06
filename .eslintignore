@@ -1,2 +1,3 @@
 svelte.config.js
 .eslintrc.js
+rollup.config.js
