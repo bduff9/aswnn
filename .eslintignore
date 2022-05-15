@@ -1,3 +1,5 @@
 svelte.config.js
 .eslintrc.js
 rollup.config.js
+__sapper__/
+s3/

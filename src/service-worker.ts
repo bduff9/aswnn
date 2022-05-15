@@ -79,10 +79,8 @@ self.addEventListener('fetch', (event: FetchEvent) => {
 	const isHttp = url.protocol.startsWith('http');
 	const isDevServerRequest =
 		url.hostname === self.location.hostname && url.port !== self.location.port;
-	const isStaticAsset =
-		url.host === self.location.host && staticAssets.has(url.pathname);
-	const skipBecauseUncached =
-		event.request.cache === 'only-if-cached' && !isStaticAsset;
+	const isStaticAsset = url.host === self.location.host && staticAssets.has(url.pathname);
+	const skipBecauseUncached = event.request.cache === 'only-if-cached' && !isStaticAsset;
 
 	if (isHttp && !isDevServerRequest && !skipBecauseUncached) {
 		event.respondWith(
@@ -90,8 +88,7 @@ self.addEventListener('fetch', (event: FetchEvent) => {
 				// always serve static files and bundler-generated assets from cache.
 				// if your application has other URLs with data that will never change,
 				// set this variable to true for them and they will only be fetched once.
-				const cachedAsset =
-					isStaticAsset && (await caches.match(event.request));
+				const cachedAsset = isStaticAsset && (await caches.match(event.request));
 
 				// for pages, you might want to serve a shell `service-worker-index.html` file,
 				// which Sapper has generated for you. It's not right for every

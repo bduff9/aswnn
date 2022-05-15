@@ -14,11 +14,17 @@
     "*.yml",
     ".gitignore",
     ".husky/**",
+    ".github/**",
+    "__sapper__/**",
+    "node_modules/**",
+    "s3/**",
+    ".vscode/**",
+    ".husky/**",
     ".github/**"
   ],
   "license": "LICENSE-HEAD",
   "licenseFormats": {
-    "js|ts|svelte|scss|css": {
+    "json|js|ts|scss|css": {
       "prepend": "/*******************************************************************************",
       "append": " */",
       "eachLine": {
@@ -29,6 +35,14 @@
       "eachLine": {
         "prepend": "# "
       }
+    },
+    "html|svelte": {
+      "append": "-->",
+      "prepend": "<!--"
+    },
+    "default": {
+      "append": "*/",
+      "prepend": "/*"
     }
   },
   "trailingWhitespace": "TRIM"

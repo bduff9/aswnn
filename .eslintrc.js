@@ -8,11 +8,6 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:@typescript-eslint/recommended-requiring-type-checking',
-		'plugin:import/errors',
-		'plugin:import/typescript',
-		'plugin:import/warnings',
-		'plugin:prettierx/@typescript-eslint',
-		'plugin:prettierx/standardx',
 		'plugin:you-dont-need-momentjs/recommended',
 	],
 	overrides: [{
@@ -23,20 +18,16 @@ module.exports = {
 	parserOptions: {
 		ecmaVersion: 2020,
 		sourceType: 'module',
+    tsconfigRootDir: __dirname,
 		project: './tsconfig.json',
 		extraFileExtensions: ['.svelte'],
 	},
 	plugins: [
-		'@typescript-eslint',
-		'import',
-		'prettierx',
 		'svelte3',
+		'@typescript-eslint',
 	],
 	root: true,
 	settings: {
-		prettierx: {
-			usePrettierrc: true,
-		},
 		'svelte3/typescript': require('typescript'),
 		// ignore style tags in Svelte because of Tailwind CSS
 		// See https://github.com/sveltejs/eslint-plugin-svelte3/issues/70
@@ -44,18 +35,6 @@ module.exports = {
 	},
 	ignorePatterns: ['node_modules'],
 	rules: {
-		'prettierx/options': [
-			2,
-			{
-				alignObjectProperties: false,
-				jsxSingleQuote: false,
-				semi: true,
-				singleQuote: true,
-				spaceBeforeFunctionParen: true,
-				trailingComma: 'all',
-				useTabs: true,
-			},
-		],
 		'linebreak-style': 'off',
 		'no-console': 'off',
 		'no-constant-condition': 'off',
@@ -70,11 +49,6 @@ module.exports = {
 		quotes: 'off',
 		semi: ['error', 'always'],
 		curly: ['error', 'multi-line'],
-		'import/named': 2,
-		'import/order': ['error', {
-			'newlines-between': 'always'
-		}],
-		'import/no-unresolved': ['warn'],
 		'one-var': ['error', 'never'],
 		'no-var': 'error',
 		'padding-line-between-statements': [

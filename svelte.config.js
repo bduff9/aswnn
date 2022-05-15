@@ -14,6 +14,7 @@
  * Home: https://asitewithnoname.com/
  */
 const sveltePreprocess = require('svelte-preprocess');
+
 module.exports = {
 	preprocess: sveltePreprocess({
 		scss: {
