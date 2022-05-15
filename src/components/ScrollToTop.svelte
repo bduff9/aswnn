@@ -1,6 +1,6 @@
 <!--
 ASWNN - homepage to A Site With No Name and its projects.
-Copyright (C) 2015-present Brian Duffey and Billy Alexander
+Copyright (C) 2015-present Brian Duffey
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
