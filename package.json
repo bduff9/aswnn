@@ -77,7 +77,7 @@
     "husky": "8.0.1",
     "license-check-and-add": "4.0.5",
     "lint-staged": "12.4.1",
-    "node-sass": "7.0.1",
+    "node-sass": "7.0.2",
     "npm-package-json-lint": "6.3.0",
     "postcss": "8.4.13",
     "rollup": "2.73.0",
