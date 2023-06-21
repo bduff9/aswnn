@@ -91,7 +91,7 @@
     "svelte-bootstrap-icons": "1.8.2",
     "svelte-check": "2.7.1",
     "svelte-forms": "2.3.1",
-    "svelte-preprocess": "4.10.6",
+    "svelte-preprocess": "4.10.7",
     "svelte-scrollto": "0.2.0",
     "sync-dotenv": "2.7.0",
     "tslib": "2.4.0",
