@@ -87,7 +87,7 @@
     "scriptlint": "2.1.10",
     "stylelint": "14.8.2",
     "stylelint-config-standard": "25.0.0",
-    "svelte": "3.48.0",
+    "svelte": "4.2.19",
     "svelte-bootstrap-icons": "1.8.2",
     "svelte-check": "2.7.1",
     "svelte-forms": "2.3.1",
