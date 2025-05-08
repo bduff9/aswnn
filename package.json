@@ -57,7 +57,7 @@
     "@rollup/plugin-url": "7.0.0",
     "@tsconfig/svelte": "3.0.0",
     "@types/babel__core": "7.1.19",
-    "@types/babel__plugin-transform-runtime": "7.9.2",
+    "@types/babel__plugin-transform-runtime": "7.9.5",
     "@types/babel__preset-env": "7.9.2",
     "@types/bootstrap": "5.1.11",
     "@types/compression": "1.7.2",
