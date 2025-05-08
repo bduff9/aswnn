@@ -14,39 +14,53 @@ along with this program.  If not, see {http://www.gnu.org/licenses/}.
 Home: https://asitewithnoname.com/
 -->
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { scrollto } from 'svelte-scrollto';
 	import {
-		Collapse,
-		Nav,
-		Navbar,
-		NavbarBrand,
-		NavbarToggler,
-		NavItem,
-		NavLink,
-	} from 'sveltestrap/src';
+	    Collapse,
+	    Nav,
+	    NavItem,
+	    NavLink,
+	    Navbar,
+	    NavbarBrand,
+	    NavbarToggler,
+	} from '@sveltestrap/sveltestrap';
+	import { onMount } from 'svelte';
 
+	// biome-ignore lint/style/useConst: <explanation>
 	let scrollY = 0;
 	let isOpen = false;
+  const sections = ['portfolio', 'about', 'contact'];
+	let activeSection = '';
 
-	const handleUpdate = (event: CustomEvent<boolean>): void => {
-		isOpen = event.detail;
-	};
+  function onScroll() {
+    let found = false;
+    for (const id of sections) {
+      const el = document.getElementById(id);
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= 80 && rect.bottom > 80) {
+          activeSection = id;
+          found = true;
+          break;
+        }
+      }
+    }
+    if (!found) activeSection = '';
+  }
 
-	onMount(async () => {
-		const ScrollSpy = await import('bootstrap/js/dist/scrollspy');
-		const scrollSpy = new ScrollSpy.default(document.body, {
-			offset: 200,
-			target: '#mainNav',
-		});
+  onMount(() => {
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  });
 
-		return () => scrollSpy.dispose();
-	});
+	function handleUpdate(event: CustomEvent<boolean>) {
+    isOpen = event.detail;
+  }
 </script>
 
 <svelte:window bind:scrollY />
 <Navbar
-	class="navbar-fixed-top navbar-custom{scrollY > 80 ? ' affix' : ' affix-top'}"
+	class={`navbar-fixed-top navbar-custom ${scrollY > 80 ? 'affix' : 'affix-top'}`}
 	dark
 	expand="md"
 	id="mainNav"
@@ -56,33 +70,24 @@ Home: https://asitewithnoname.com/
 		>A Site With No Name</NavbarBrand
 	>
 	<NavbarToggler on:click={() => (isOpen = !isOpen)} />
-	<!-- Collect the nav links, forms, and other content for toggling -->
-	<Collapse
-		{isOpen}
-		navbar
-		expand="md"
-		on:update={handleUpdate}
-		id="bs-example-navbar-collapse-1"
-	>
-		<Nav class="ms-auto" navbar>
-			<NavItem class="page-scroll">
-				<a class="nav-link" use:scrollto={'#portfolio'} href="#portfolio"
-					>Projects</a>
-			</NavItem>
-			<NavItem class="page-scroll">
-				<a class="nav-link" use:scrollto={'#about'} href="#about">About</a>
-			</NavItem>
-			<NavItem class="page-scroll">
-				<a class="nav-link" use:scrollto={'#contact'} href="#contact"
-					>Contact</a
-				>
-			</NavItem>
-		</Nav>
-	</Collapse>
+
+		<Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
+			<Nav class="ms-auto" navbar>
+				<NavItem>
+					<NavLink class={activeSection === 'portfolio' ? 'active' : ''} href="#portfolio">Projects</NavLink>
+				</NavItem>
+				<NavItem>
+					<NavLink class={activeSection === 'about' ? 'active' : ''} href="#about">About</NavLink>
+				</NavItem>
+				<NavItem>
+					<NavLink class={activeSection === 'contact' ? 'active' : ''} href="#contact">Contact</NavLink>
+				</NavItem>
+			</Nav>
+		</Collapse>
 </Navbar>
 
 <style lang="scss">
-	@import '../../scss/variables.scss';
+	@import '../../../scss/variables.scss';
 	:global(.navbar-custom) {
 		background: $primary;
 		font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -178,8 +183,20 @@ Home: https://asitewithnoname.com/
 		}
 	}
 
+	:global(.navbar-custom a) {
+		text-decoration: none;
+	}
+	// :global(.navbar-custom .navbar-nav) {
+	// 	list-style: none;
+	// 	padding-left: 0;
+	// 	margin-bottom: 0;
+	// 	display: flex !important;
+	// 	flex-direction: row !important;
+	// 	align-items: center;
+	// }
 	:global(.navbar-fixed-top) {
 		position: fixed;
+		top: 0;
 		left: 0;
 		right: 0;
 		z-index: 1030;

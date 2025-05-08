@@ -98,8 +98,8 @@ Home: https://asitewithnoname.com/
 	that you visit and are stored on your device's internal memory.
 </p>
 <p>
-	This Service does not use these “cookies” explicitly. However, the app may use
-	third party code and libraries that use “cookies” to collect information and
+	This Service does not use these "cookies" explicitly. However, the app may use
+	third party code and libraries that use "cookies" to collect information and
 	improve their services. You have the option to either accept or refuse these
 	cookies and know when a cookie is being sent to your device. If you choose to
 	refuse our cookies, you may not be able to use some portions of this Service.
@@ -138,7 +138,7 @@ Home: https://asitewithnoname.com/
 	for the content, privacy policies, or practices of any third-party sites or
 	services.
 </p>
-<p><strong>Children’s Privacy</strong></p>
+<p><strong>Children's Privacy</strong></p>
 <p>
 	These Services do not address anyone under the age of 13. I do not knowingly
 	collect personally identifiable information from children under 13 years of

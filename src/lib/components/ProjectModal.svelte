@@ -15,22 +15,23 @@ Home: https://asitewithnoname.com/
 -->
 <script lang="ts">
 	import {
-		Button,
-		Col,
-		Container,
-		Modal,
-		ModalBody,
-		ModalHeader,
-		Row,
-	} from 'sveltestrap/src';
-	import X from 'svelte-bootstrap-icons/lib/X';
+	    Button,
+	    Col,
+	    Container,
+	    Modal,
+	    ModalBody,
+	    ModalHeader,
+	    Row,
+	} from '@sveltestrap/sveltestrap';
+	import { X } from 'svelte-bootstrap-icons';
 
 	export let description: string;
 	export let image: string;
 	export let index: number;
-	export let metadata: any[];
+	export let metadata: { name: string; type: string; url?: string }[];
 	export let title: string;
 	export let url: string;
+	// biome-ignore lint/style/useConst: <explanation>
 	export let isOpen = false;
 	export let toggle: () => void;
 </script>
@@ -69,7 +70,7 @@ Home: https://asitewithnoname.com/
 							</li>
 						{/each}
 					</ul>
-					<Button default on:click={toggle}><X /> Close</Button>
+					<Button on:click={toggle}><X /> Close</Button>
 				</ModalBody>
 			</Col>
 		</Row>
@@ -77,14 +78,13 @@ Home: https://asitewithnoname.com/
 </Modal>
 
 <style lang="scss">
-	@import '../../scss/variables.scss';
+	@import '../../../scss/variables.scss';
 	:global(.portfolio-modal) {
 		height: auto;
 
 		:global(.modal-content) {
 			border-radius: 0;
 			background-clip: border-box;
-			-webkit-box-shadow: none;
 			box-shadow: none;
 			border: none;
 			min-height: 100%;

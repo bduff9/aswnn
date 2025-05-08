@@ -14,12 +14,8 @@ along with this program.  If not, see {http://www.gnu.org/licenses/}.
 Home: https://asitewithnoname.com/
 -->
 <script lang="ts">
-	import { Button, Col, Container, Row } from 'sveltestrap/src';
-	import CloudFill from 'svelte-bootstrap-icons/lib/CloudFill';
-	import Facebook from 'svelte-bootstrap-icons/lib/Facebook';
-	import Github from 'svelte-bootstrap-icons/lib/Github';
-	import Linkedin from 'svelte-bootstrap-icons/lib/Linkedin';
-	import Twitter from 'svelte-bootstrap-icons/lib/Twitter';
+	import { Button, Col, Container, Row } from '@sveltestrap/sveltestrap';
+	import { CloudFill, Facebook, Github, Linkedin, Twitter } from 'svelte-bootstrap-icons';
 
 	const year = new Date().getFullYear();
 </script>
@@ -155,7 +151,7 @@ Home: https://asitewithnoname.com/
 </footer>
 
 <style lang="scss">
-	@import '../../scss/variables.scss';
+	@import '../../../scss/variables.scss';
 
 	footer {
 		color: white;

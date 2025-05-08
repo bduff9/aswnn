@@ -15,5 +15,5 @@
  */
 export const encode = (data: Record<string, string>): string =>
 	Object.keys(data)
-		.map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-		.join('&');
+		.map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+		.join("&");

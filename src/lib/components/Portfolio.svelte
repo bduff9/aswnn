@@ -14,7 +14,7 @@ along with this program.  If not, see {http://www.gnu.org/licenses/}.
 Home: https://asitewithnoname.com/
 -->
 <script lang="ts">
-	import { Col, Container, Row } from 'sveltestrap/src';
+	import { Col, Container, Row } from '@sveltestrap/sveltestrap';
 	import Project from './Project.svelte';
 	import ProjectModal from './ProjectModal.svelte';
 
@@ -69,10 +69,38 @@ Home: https://asitewithnoname.com/
 					type: 'V3 Language',
 					url: 'https://www.typescriptlang.org/',
 				},
-				{ name: 'August 2021', type: 'V3 Released (Pending)' },
+				{ name: 'August 2021', type: 'V3 Released' },
 			],
 			title: 'NFL Confidence Pool',
 			url: 'https://nfl.asitewithnoname.com/',
+		},
+		{
+			description:
+				'Started in 2024, up and down the river is a fun card game to play with friends.  We wanted a way to track scores and stats, so we built this app to do just that.',
+			icon: '/img/img256/Pencil.png',
+			image: '/img/apps/up-and-down.png',
+			metadata: [
+				{ name: 'Remix', type: 'V1 Server', url: 'https://remix.run/' },
+				{ name: 'TailwindCSS', type: 'V1 Styling', url: 'https://tailwindcss.com/' },
+				{ name: 'August 2024', type: 'V1 Released' },
+			],
+			title: 'Up and Down the River',
+			url: 'https://score-keeping.asitewithnoname.com/',
+		},
+		{
+			description:
+				'Started in 2025, up and down the river is a fun card game to play with friends.  We wanted a way to track scores and stats, so we built this app to do just that.',
+			icon: '/img/img256/Fork,-knife-and-spoon.png',
+			image: '/img/apps/tastecheq.png',
+			metadata: [
+				{ name: 'NextJS', type: 'V1 Server', url: 'https://nextjs.org/' },
+				{ name: 'TailwindCSS', type: 'V1 Styling', url: 'https://tailwindcss.com/' },
+				{ name: 'Neon', type: 'V1 Database', url: 'https://neon.tech/' },
+				{ name: 'Gemini', type: 'V1 AI', url: 'https://gemini.google.com/' },
+				{ name: 'May 2025', type: 'V1 Released' },
+			],
+			title: 'TasteCheq',
+			url: 'https://tastecheq.com/',
 		},
 		{
 			description:
@@ -202,6 +230,7 @@ Home: https://asitewithnoname.com/
 			url: 'https://asitewithnoname.com/',
 		},
 	];
+	// biome-ignore lint/style/useConst: <explanation>
 	let isOpen = projects.map(() => false);
 </script>
 

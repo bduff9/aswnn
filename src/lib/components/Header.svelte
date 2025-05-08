@@ -14,7 +14,7 @@ along with this program.  If not, see {http://www.gnu.org/licenses/}.
 Home: https://asitewithnoname.com/
 -->
 <script lang="ts">
-	import { Col, Container, Row } from 'sveltestrap/src';
+	import { Col, Container, Row } from '@sveltestrap/sveltestrap';
 </script>
 
 <header>
@@ -38,7 +38,7 @@ Home: https://asitewithnoname.com/
 </header>
 
 <style lang="scss">
-	@import '../../scss/variables.scss';
+	@import '../../../scss/variables.scss';
 
 	header {
 		text-align: center;

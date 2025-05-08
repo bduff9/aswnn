@@ -14,43 +14,41 @@ along with this program.  If not, see {http://www.gnu.org/licenses/}.
 Home: https://asitewithnoname.com/
 -->
 <script lang="ts">
-	export let status: number;
-	export let error: Error;
+	import { Button } from '@sveltestrap/sveltestrap';
+	import { ChevronUp } from 'svelte-bootstrap-icons';
 
-	const dev = process.env.NODE_ENV === 'development';
+	function scrollToTop() {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}
 </script>
 
-<svelte:head>
-	<title>{status}</title>
-</svelte:head>
+<div class="scroll-top page-scroll d-md-none">
+	<Button color="primary" on:click={scrollToTop}>
+		<ChevronUp />
+	</Button>
+</div>
 
-<h1>{status}</h1>
+<style lang="scss">
+	@import '../../../scss/variables.scss';
 
-<p>{error.message}</p>
+	.scroll-top {
+		position: fixed;
+		right: 2%;
+		bottom: 2%;
+		width: 50px;
+		height: 50px;
+		z-index: 1049;
 
-{#if dev && error.stack}
-	<pre>{error.stack}</pre>
-{/if}
+		:global(.btn) {
+			font-size: 20px;
+			width: 50px;
+			height: 50px;
+			border-radius: 100%;
+			line-height: 28px;
 
-<style>
-	h1,
-	p {
-		margin: 0 auto;
-	}
-
-	h1 {
-		font-size: 2.8em;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
+			&:focus {
+				outline: none;
+			}
 		}
 	}
 </style>

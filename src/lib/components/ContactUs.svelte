@@ -15,32 +15,32 @@ Home: https://asitewithnoname.com/
 -->
 <script lang="ts">
 	import {
-		Alert,
-		Button,
-		Col,
-		Container,
-		Form,
-		FormGroup,
-		Input,
-		Label,
-		Row,
-	} from 'sveltestrap/src';
-	import { form, field } from 'svelte-forms';
-	import { email as validEmail, min, required } from 'svelte-forms/validators';
+	    Alert,
+	    Button,
+	    Col,
+	    Container,
+	    Form,
+	    FormGroup,
+	    Input,
+	    Label,
+	    Row,
+	} from '@sveltestrap/sveltestrap';
+	import { field, form } from 'svelte-forms';
+	import { min, required, email as validEmail } from 'svelte-forms/validators';
 
 	import { encode } from '../utilities';
 
-	let name: string;
+	let name = '';
 	let nameDirty = false;
-	let email: string;
+	let email = '';
 	let emailDirty = false;
-	let phone: string;
+	let phone = '';
 	let phoneDirty = false;
-	let message: string;
+	let message = '';
 	let messageDirty = false;
-	let honeypot: string;
+	let honeypot = '';
 	let submitted = false;
-	let submitError: string;
+	let submitError = '';
 
 	const fullName = () => {
 		return (value: string) => ({
@@ -100,8 +100,9 @@ Home: https://asitewithnoname.com/
 				submitted = true;
 			})
 			.catch(
-				(error: string) =>
-					(submitError = `There was an error submitting your request, please try again.  Details: ${error}`)
+				(error: string) => {
+					(submitError = `There was an error submitting your request, please try again.  Details: ${error}`);
+				}
 			);
 	};
 </script>
@@ -247,7 +248,7 @@ Home: https://asitewithnoname.com/
 </section>
 
 <style lang="scss">
-	@import '../../scss/variables.scss';
+	@import '../../../scss/variables.scss';
 	:global(.floating-label-form-group) {
 		position: relative;
 		margin-bottom: 0;

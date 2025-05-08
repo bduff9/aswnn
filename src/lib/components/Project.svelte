@@ -14,8 +14,8 @@ along with this program.  If not, see {http://www.gnu.org/licenses/}.
 Home: https://asitewithnoname.com/
 -->
 <script lang="ts">
-	import { Col } from 'sveltestrap/src';
-	import ZoomIn from 'svelte-bootstrap-icons/lib/ZoomIn';
+	import { Col } from '@sveltestrap/sveltestrap';
+	import { ZoomIn } from 'svelte-bootstrap-icons';
 
 	export let icon: string;
 	export let index: number;
@@ -39,7 +39,7 @@ Home: https://asitewithnoname.com/
 </Col>
 
 <style lang="scss">
-	@import '../../scss/variables.scss';
+	@import '../../../scss/variables.scss';
 	:global(.portfolio-item) {
 		margin: 0 0 15px;
 		right: 0;

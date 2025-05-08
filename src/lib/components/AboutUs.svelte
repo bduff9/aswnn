@@ -14,9 +14,12 @@ along with this program.  If not, see {http://www.gnu.org/licenses/}.
 Home: https://asitewithnoname.com/
 -->
 <script lang="ts">
-	import PersonFill from 'svelte-bootstrap-icons/lib/PersonFill';
-	import { scrollToBottom } from 'svelte-scrollto';
-	import { Button, Col, Container, Row } from 'sveltestrap/src';
+	import { Button, Col, Container, Row } from '@sveltestrap/sveltestrap';
+	import { PersonFill } from 'svelte-bootstrap-icons';
+
+	function scrollToBottom() {
+		window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+	}
 </script>
 
 <section class="success" id="about">
@@ -54,7 +57,7 @@ Home: https://asitewithnoname.com/
 </section>
 
 <style lang="scss">
-	@import '../../scss/variables.scss';
+	@import '../../../scss/variables.scss';
 	section.success {
 		background: $success;
 		color: white;

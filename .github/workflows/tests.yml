@@ -15,11 +15,11 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "14.15.4"
+          node-version: "22.12.0"
       - name: Install dependencies
         run: npm ci
       - name: Validate code is well-formatted
-        run: npm run validate
+        run: npm run check
       - name: Analyze the code
         id: scc
         uses: iryanbell/scc-docker-action@v1.0.0

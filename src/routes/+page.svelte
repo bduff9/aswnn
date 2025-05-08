@@ -14,38 +14,23 @@ along with this program.  If not, see {http://www.gnu.org/licenses/}.
 Home: https://asitewithnoname.com/
 -->
 <script lang="ts">
-	import ChevronUp from 'svelte-bootstrap-icons/lib/ChevronUp';
-	import { scrollToTop } from 'svelte-scrollto';
-	import { Button } from 'sveltestrap/src';
+	import AboutUs from '$lib/components/AboutUs.svelte';
+	import ContactUs from '$lib/components/ContactUs.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import Nav from '$lib/components/Nav.svelte';
+	import Portfolio from '$lib/components/Portfolio.svelte';
+	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
 </script>
 
-<div class="scroll-top page-scroll d-md-none">
-	<Button color="primary" on:click={scrollToTop}>
-		<ChevronUp />
-	</Button>
-</div>
+<svelte:head>
+	<title>Home | A Site With No Name</title>
+</svelte:head>
 
-<style lang="scss">
-	@import '../../scss/variables.scss';
-
-	.scroll-top {
-		position: fixed;
-		right: 2%;
-		bottom: 2%;
-		width: 50px;
-		height: 50px;
-		z-index: 1049;
-
-		:global(.btn) {
-			font-size: 20px;
-			width: 50px;
-			height: 50px;
-			border-radius: 100%;
-			line-height: 28px;
-
-			&:focus {
-				outline: none;
-			}
-		}
-	}
-</style>
+<Nav />
+<Header />
+<Portfolio />
+<AboutUs />
+<ContactUs />
+<Footer />
+<ScrollToTop />
